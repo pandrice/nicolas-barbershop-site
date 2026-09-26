@@ -64,6 +64,14 @@ header {
 }
 .hero-sub { margin-top: 1rem; color: var(--muted); font-size: 1.05rem; max-width: 36ch; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-top: 1.75rem; }
+
+.book-stack { display: flex; flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+.book-hint {
+  color: var(--muted); font-size: 0.85rem; font-weight: 400;
+  letter-spacing: -0.01em; margin: 0;
+}
+.cta-bar .book-stack { align-items: flex-end; }
+.cta-bar .book-hint { text-align: right; }
 .cards {
   display: grid; gap: 0.75rem; margin: 2rem 0 3rem; padding: 0.75rem;
   border: 1px solid var(--border); border-radius: 16px;
