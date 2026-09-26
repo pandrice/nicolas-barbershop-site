@@ -894,19 +894,23 @@ a.card.card-link:hover {
 .about-profile {
   display: grid;
   gap: 1rem;
+  min-width: 0;
   padding: 1.15rem;
   border: 1px solid var(--border);
   border-radius: 16px;
   background: var(--bg-elevated);
 }
 .about-photo {
+  display: block;
   width: 100%;
-  max-width: 14rem;
+  max-width: none;
   height: auto;
+  aspect-ratio: auto;
   object-fit: contain;
+  object-position: center;
   border-radius: 14px;
   border: 1px solid var(--border);
-  justify-self: start;
+  justify-self: stretch;
 }
 .about-copy h3 {
   font-size: 1.25rem;
@@ -930,11 +934,6 @@ a.card.card-link:hover {
     gap: 1.5rem;
   }
   .about-profile {
-    grid-template-columns: auto 1fr;
     align-items: start;
-  }
-  .about-photo {
-    width: 9.5rem;
-    max-width: none;
   }
 }
