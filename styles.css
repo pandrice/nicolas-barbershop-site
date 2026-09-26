@@ -588,3 +588,67 @@ a.card.card-link:hover {
   .ov-card:hover .ov-card-meta,
   .ov-card:focus-within .ov-card-meta { opacity: 1; }
 }
+
+/* ── Home compact hours + news ────────────────────────────────── */
+.home-hours {
+  max-width: 22rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--bg-elevated);
+}
+.hours-compact {
+  font-size: 0.8rem;
+}
+.hours-compact th,
+.hours-compact td {
+  padding: 0.28rem 0;
+}
+.hours-compact th { width: 42%; }
+.home-hours-cue {
+  margin-top: 0.85rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.home-hours-cue .link-quiet { font-size: inherit; color: var(--accent); }
+.home-hours-cue .link-quiet:hover { color: var(--accent-hover); }
+
+.news-list {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 40rem;
+}
+.news-item {
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-elevated);
+}
+.news-date {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.35rem;
+}
+.news-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.3rem;
+}
+.news-body {
+  color: var(--muted);
+  font-size: 0.875rem;
+  margin: 0;
+}
+.news-empty {
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 1rem 1.15rem;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  background: transparent;
+  max-width: 40rem;
+}

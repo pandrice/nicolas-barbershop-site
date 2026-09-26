@@ -1,0 +1,4 @@
+{
+  "_comment": "How to update (Dan / Shop GM): add objects to \"items\" with date (YYYY-MM-DD), title, and body (short UK English). Put newest first. Commit and push to main, or ask Web Dev. Leave items empty for the home empty-state message. Do not remove _comment.",
+  "items": []
+}

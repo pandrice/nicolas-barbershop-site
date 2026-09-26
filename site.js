@@ -98,4 +98,74 @@
   } else {
     revealEls.forEach(function (el) { el.classList.add('is-visible'); });
   }
+
+  /* ── Home news (news.json) ──────────────────────────────────── */
+  var newsList = document.getElementById('news-list');
+  if (newsList) {
+    var emptyMsg = 'No current notices — check back for holiday hours and shop updates.';
+
+    function formatDate(iso) {
+      if (!iso) return '';
+      var parts = String(iso).split('-');
+      if (parts.length !== 3) return iso;
+      var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      var d = parseInt(parts[2], 10);
+      var m = months[parseInt(parts[1], 10) - 1];
+      var y = parts[0];
+      if (!m || !d) return iso;
+      return d + ' ' + m + ' ' + y;
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function renderEmpty() {
+      newsList.innerHTML = '<p class="news-empty">' + emptyMsg + '</p>';
+    }
+
+    function renderItems(items) {
+      if (!items || !items.length) {
+        renderEmpty();
+        return;
+      }
+      var html = items.map(function (item) {
+        var title = escapeHtml(item.title || 'Update');
+        var body = escapeHtml(item.body || '');
+        var dateLabel = formatDate(item.date);
+        var dateAttr = item.date ? ' datetime="' + escapeHtml(item.date) + '"' : '';
+        var timeHtml = dateLabel
+          ? '<time class="news-date"' + dateAttr + '>' + escapeHtml(dateLabel) + '</time>'
+          : '';
+        return (
+          '<article class="news-item">' +
+            timeHtml +
+            '<h3 class="news-title">' + title + '</h3>' +
+            (body ? '<p class="news-body">' + body + '</p>' : '') +
+          '</article>'
+        );
+      }).join('');
+      newsList.innerHTML = html;
+    }
+
+    fetch('news.json', { cache: 'no-cache' })
+      .then(function (res) {
+        if (!res.ok) throw new Error('news fetch failed');
+        return res.json();
+      })
+      .then(function (data) {
+        var items = Array.isArray(data) ? data : (data && data.items) || [];
+        items = items.filter(function (item) {
+          return item && (item.title || item.body);
+        });
+        renderItems(items);
+      })
+      .catch(function () {
+        renderEmpty();
+      });
+  }
 })();
