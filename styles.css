@@ -902,8 +902,8 @@ a.card.card-link:hover {
 .about-photo {
   width: 100%;
   max-width: 14rem;
-  aspect-ratio: 1;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   border-radius: 14px;
   border: 1px solid var(--border);
   justify-self: start;
