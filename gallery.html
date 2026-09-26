@@ -61,18 +61,7 @@
           <a class="btn" href="https://www.instagram.com/nicolas_barbershop_/" target="_blank" rel="noopener">Follow on Instagram</a>
         </div>
         <div class="ig-embed-wrap reveal">
-          <!-- Official Instagram profile embed (no third-party token).
-               If posts don’t load in some browsers, the Follow CTA above is the fallback.
-               Dan can later paste a SnapWidget / Behold widget ID here for a live grid. -->
-          <blockquote class="instagram-media"
-            data-instgrm-permalink="https://www.instagram.com/nicolas_barbershop_/"
-            data-instgrm-version="14"
-            style="background:#111214; border:0; margin:0 auto; max-width:100%; width:100%; min-width:0;">
-            <div class="gallery-fallback">
-              <p>See our latest posts on Instagram.</p>
-              <a class="btn" href="https://www.instagram.com/nicolas_barbershop_/" target="_blank" rel="noopener">Open @nicolas_barbershop_</a>
-            </div>
-          </blockquote>
+          <behold-widget feed-id="JgMWF0hp2BcJLlZdsh4e"></behold-widget>
         </div>
         <p class="note" style="margin-top:1.25rem;">Also on <a class="link-quiet" href="https://www.facebook.com/nicolasbarbershop35/" target="_blank" rel="noopener" style="color:var(--accent)">Facebook</a>.</p>
       </div>
@@ -96,7 +85,16 @@
       </div>
     </div>
   </footer>
-  <script async src="https://www.instagram.com/embed.js"></script>
+  <script>
+    (() => {
+      if (window.__bhldScript) return;
+      window.__bhldScript = true;
+      const d = document, s = d.createElement("script");
+      s.type = "module";
+      s.src = "https://w.behold.so/widget.js";
+      setTimeout(() => { d.head.append(s); }, 0);
+    })();
+  </script>
   <script src="site.js" defer></script>
 
 </body>
