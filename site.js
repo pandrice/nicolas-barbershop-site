@@ -99,10 +99,14 @@
     revealEls.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
-  /* ── Home news (news.json) ──────────────────────────────────── */
+  /* ── Shop updates (news.json) ───────────────────────────────── */
   var newsList = document.getElementById('news-list');
-  if (newsList) {
+  var newsTicker = document.getElementById('news-ticker');
+  if (newsList || newsTicker) {
     var emptyMsg = 'No current notices — check back for holiday hours and shop updates.';
+    var tickerTrack = newsTicker && newsTicker.querySelector('.news-ticker-track');
+    var tickerList = newsTicker && newsTicker.querySelector('.news-ticker-list');
+    var tickerToggle = newsTicker && newsTicker.querySelector('.news-ticker-toggle');
 
     function formatDate(iso) {
       if (!iso) return '';
@@ -125,10 +129,11 @@
     }
 
     function renderEmpty() {
-      newsList.innerHTML = '<p class="news-empty">' + emptyMsg + '</p>';
+      if (newsList) newsList.innerHTML = '<p class="news-empty">' + emptyMsg + '</p>';
     }
 
     function renderItems(items) {
+      if (!newsList) return;
       if (!items || !items.length) {
         renderEmpty();
         return;
@@ -152,6 +157,32 @@
       newsList.innerHTML = html;
     }
 
+    function renderTicker(items) {
+      if (!newsTicker || !tickerTrack || !tickerList || !items.length) return;
+      var tickerItems = items.map(function (item) {
+        var title = escapeHtml(item.title || 'Update');
+        var body = item.body ? ' <span class="news-ticker-separator" aria-hidden="true">·</span> ' + escapeHtml(item.body) : '';
+        return '<li class="news-ticker-item"><strong>' + title + '</strong>' + body + '</li>';
+      }).join('');
+
+      tickerTrack.innerHTML = '<ul class="news-ticker-set">' + tickerItems + '</ul>' +
+        (reduceMotion ? '' : '<ul class="news-ticker-set" aria-hidden="true">' + tickerItems + '</ul>');
+      tickerList.innerHTML = items.map(function (item) {
+        var title = escapeHtml(item.title || 'Update');
+        var body = item.body ? ' — ' + escapeHtml(item.body) : '';
+        return '<li>' + title + body + '</li>';
+      }).join('');
+      newsTicker.hidden = false;
+    }
+
+    if (tickerToggle && newsTicker) {
+      tickerToggle.addEventListener('click', function () {
+        var paused = newsTicker.classList.toggle('is-paused');
+        tickerToggle.setAttribute('aria-pressed', paused ? 'true' : 'false');
+        tickerToggle.textContent = paused ? 'Play' : 'Pause';
+      });
+    }
+
     fetch('news.json', { cache: 'no-cache' })
       .then(function (res) {
         if (!res.ok) throw new Error('news fetch failed');
@@ -163,9 +194,11 @@
           return item && (item.title || item.body);
         });
         renderItems(items);
+        renderTicker(items);
       })
       .catch(function () {
         renderEmpty();
       });
   }
+
 })();

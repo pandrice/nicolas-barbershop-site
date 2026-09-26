@@ -25,6 +25,16 @@
         </button>
       </div>
     </div>
+    <div id="news-ticker" class="news-ticker" hidden role="region" aria-labelledby="news-ticker-label">
+      <div class="wrap news-ticker-inner">
+        <span id="news-ticker-label" class="news-ticker-label">Shop updates</span>
+        <div class="news-ticker-viewport" aria-hidden="true">
+          <div class="news-ticker-track"></div>
+        </div>
+        <button type="button" class="news-ticker-toggle" aria-pressed="false">Pause</button>
+        <ul class="news-ticker-list" aria-live="polite"></ul>
+      </div>
+    </div>
   </header>
 
   <div id="site-menu" class="site-menu" hidden aria-hidden="true">
