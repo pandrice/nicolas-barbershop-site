@@ -474,3 +474,105 @@ a.card.card-link:hover {
   font-style: normal; color: var(--muted);
   border-left: 2px solid var(--border); padding-left: 0.75rem;
 }
+
+/* ── Service overview (Fargs-style image cards) ───────────────── */
+.service-overview-grid {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0.5rem 0 1.75rem;
+}
+@media (min-width: 640px) {
+  .service-overview-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 960px) {
+  .service-overview-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.ov-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--bg-elevated);
+  min-height: 100%;
+}
+.ov-card-media {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  overflow: hidden;
+  background: #0d0e10;
+}
+.ov-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  transition: transform 0.35s ease;
+}
+.ov-card:hover .ov-card-media img { transform: scale(1.04); }
+.ov-card-media::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(8,9,10,0.15) 20%, rgba(8,9,10,0.72) 100%);
+  pointer-events: none;
+}
+.ov-card-title {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  z-index: 1;
+  padding: 1rem 1rem 0.85rem;
+  font-size: clamp(1.05rem, 2.4vw, 1.2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.45);
+}
+.ov-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem 1.05rem 1.1rem;
+  flex: 1;
+}
+.ov-card-body p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+.ov-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem 0.75rem;
+  margin-top: auto;
+  padding-top: 0.15rem;
+}
+.ov-duration {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.ov-card .btn { font-size: 0.8rem; padding: 0.45rem 0.85rem; }
+.ov-card-prices {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.ov-card-prices a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.ov-card-prices a:hover { color: var(--accent-hover); }
+
+/* Soft hover reveal for duration/book — always visible on touch/no-hover */
+@media (hover: hover) and (pointer: fine) {
+  .ov-card-meta {
+    opacity: 0.55;
+    transition: opacity 0.2s ease;
+  }
+  .ov-card:hover .ov-card-meta,
+  .ov-card:focus-within .ov-card-meta { opacity: 1; }
+}

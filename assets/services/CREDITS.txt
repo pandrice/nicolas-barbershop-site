@@ -1,0 +1,10 @@
+Service overview images — royalty-free Unsplash / Pexels
+standard.jpg       Pexels 3775534 (https://www.pexels.com/photo/bearded-man-in-black-leather-jacket-3775534/; Andrea Piacquadio; white British-looking man, textured short back & sides with visible side length (not skin fade) + neat short beard, looking away, leather jacket; cropped for card)
+beard.jpg          Pexels 3775534 (same source as standard; tighter crop emphasising neat short beard + textured top; cropped for card)
+restyle.jpg        Pexels 12823070 (https://www.pexels.com/photo/close-up-photo-of-bearded-man-with-long-hair-12823070/; Francesco Rosati; white man, longer layered hair past ears, side profile, outdoor; cropped for card)
+clipper.jpg        Unsplash photo-1645857196231 (Lizzy Jenkins; https://unsplash.com/photos/a-man-in-a-shirt-is-posing-for-a-picture-BRJDoOstnlY; white man, even short clipper/buzz, outdoor; cropped for card)
+clipper-beard.jpg  Pexels 23531768 (https://www.pexels.com/photo/portrait-of-a-man-23531768/; even buzz + beard, 3/4 profile looking away) — KEEP (white British-looking)
+skin-fade.jpg      Unsplash photo-1599834562135-b6fc90e642ca (Stephan Louis; https://unsplash.com/photos/man-in-black-zip-up-jacket-L3s5QySz5UM; finished skin fade portrait) — KEEP
+kids.jpg           Pexels photo-1620760 (studio grey, boy crop) — KEEP (kids can stay diverse)
+seniors.jpg        Unsplash photo-1560250097-0b93528c311a (soft studio) — KEEP
+family.jpg         Pexels 4530439 (https://www.pexels.com/photo/serious-father-and-little-kids-sitting-together-4530439/; one adult + two kids, profile) — KEEP
