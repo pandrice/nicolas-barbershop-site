@@ -28,42 +28,6 @@
       "bytes": 485359
     },
     {
-      "id": "UAPHT5",
-      "file": "shop-station-ringlight.jpg",
-      "size": [
-        1200,
-        1600
-      ],
-      "bytes": 333460
-    },
-    {
-      "id": "ITOXEC",
-      "file": "shop-length-view.jpg",
-      "size": [
-        1200,
-        1600
-      ],
-      "bytes": 371402
-    },
-    {
-      "id": "F27DUS",
-      "file": "shop-length-view-2.jpg",
-      "size": [
-        1200,
-        1600
-      ],
-      "bytes": 404222
-    },
-    {
-      "id": "8R4UCT",
-      "file": "shop-length-chairs.jpg",
-      "size": [
-        1200,
-        1600
-      ],
-      "bytes": 360312
-    },
-    {
       "id": "RV6PLO",
       "file": "shop-station-clock.jpg",
       "size": [
@@ -89,24 +53,6 @@
         1600
       ],
       "bytes": 170400
-    },
-    {
-      "id": "NICOLA",
-      "file": "team-nicola.jpg",
-      "size": [
-        1200,
-        1600
-      ],
-      "bytes": 337783
-    },
-    {
-      "id": "LEANNE",
-      "file": "team-leanne.jpg",
-      "size": [
-        1200,
-        1600
-      ],
-      "bytes": 246719
     }
   ],
   "maisie": [

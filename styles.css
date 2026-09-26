@@ -877,3 +877,64 @@ a.card.card-link:hover {
   background: transparent;
   max-width: 40rem;
 }
+
+
+/* About us profiles */
+.about-intro {
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 52ch;
+  margin: 0 0 1.75rem;
+  line-height: 1.55;
+}
+.about-profiles {
+  display: grid;
+  gap: 1.25rem;
+}
+.about-profile {
+  display: grid;
+  gap: 1rem;
+  padding: 1.15rem;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--bg-elevated);
+}
+.about-photo {
+  width: 100%;
+  max-width: 14rem;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  justify-self: start;
+}
+.about-copy h3 {
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.about-copy .role {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin: 0.2rem 0 0.65rem;
+}
+.about-copy p:last-child {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+@media (min-width: 720px) {
+  .about-profiles {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  .about-profile {
+    grid-template-columns: auto 1fr;
+    align-items: start;
+  }
+  .about-photo {
+    width: 9.5rem;
+    max-width: none;
+  }
+}
