@@ -175,22 +175,33 @@ footer {
 
 /* Google reviews strip */
 .review-grid {
-  display: grid; gap: 0.75rem;
-  margin: 1.25rem 0 1rem;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.6rem;
+  margin: 1.1rem 0 1rem;
 }
 .review-card {
-  padding: 1.1rem 1.15rem; border-radius: 14px;
+  display: flex; flex-direction: column;
+  padding: 0.85rem 0.8rem; border-radius: 12px;
   border: 1px solid var(--border); background: var(--bg-elevated);
+}
+.review-stars {
+  color: #f3c969; font-size: 0.72rem; line-height: 1;
+  letter-spacing: 0.08em; margin-bottom: 0.55rem;
 }
 .review-card blockquote { margin: 0; }
 .review-card blockquote p {
-  color: var(--text); font-size: 0.95rem; line-height: 1.45;
+  color: var(--text); font-size: 0.85rem; line-height: 1.4;
   letter-spacing: -0.01em;
 }
 .review-card footer {
-  display: flex; flex-wrap: wrap; gap: 0.35rem 0.75rem;
-  align-items: baseline; margin-top: 0.85rem;
-  color: var(--muted); font-size: 0.8rem;
+  display: flex; flex-wrap: wrap; gap: 0.2rem 0.45rem;
+  align-items: center; margin-top: auto; padding-top: 0.7rem;
+  color: var(--muted); font-size: 0.72rem;
+}
+.review-avatar {
+  display: inline-grid; place-items: center; width: 1.45rem; height: 1.45rem;
+  border-radius: 50%; background: rgba(94, 106, 210, 0.18);
+  border: 1px solid rgba(94, 106, 210, 0.45); color: #b9beff;
+  font-size: 0.58rem; font-weight: 600; letter-spacing: 0;
 }
 .review-card cite { font-style: normal; font-weight: 500; color: var(--text); }
 .review-card time { color: var(--muted); }
@@ -204,8 +215,9 @@ footer {
 }
 .reviews-meta a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
 @media (min-width: 720px) {
-  .review-grid { grid-template-columns: repeat(2, 1fr); }
-  .review-grid .review-card:last-child:nth-child(odd) { grid-column: 1 / -1; max-width: 36rem; }
+  .review-grid { grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+  .review-card { padding: 1rem; }
+  .review-card blockquote p { font-size: 0.9rem; }
 }
 
 /* Price list */
