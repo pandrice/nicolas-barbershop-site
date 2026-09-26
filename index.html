@@ -17,16 +17,36 @@
       <a class="logo-link" href="index.html">
         <img class="logo-img" src="assets/logo.svg" width="220" height="28" alt="Nicola’s Barbershop" />
       </a>
-      <nav class="nav-links" aria-label="Primary">
-          <a href="index.html#visit" aria-current="page">Hours</a>
-          <a href="prices.html">Prices</a>
-          <a href="faq.html">FAQ</a>
-          <a href="policy.html">Policy</a>
-          <a href="#chair-rental">Chair rental</a>
-      </nav>
-      <a class="btn" href="https://nicolasbarbershop.nearcut.com/" target="_blank" rel="noopener">Book</a>
+      <div class="nav-actions">
+        <a class="btn" href="https://nicolasbarbershop.nearcut.com/" target="_blank" rel="noopener">Book</a>
+        <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
+          <span class="menu-toggle-bars" aria-hidden="true"><span></span></span>
+        </button>
+      </div>
     </div>
   </header>
+
+  <div id="site-menu" class="site-menu" hidden aria-hidden="true">
+    <div class="site-menu-inner">
+      <nav class="site-menu-nav" aria-label="Site">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="services.html">Services</a>
+        <a href="prices.html">Prices</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="faq.html">FAQ</a>
+        <a href="policy.html">Policy</a>
+        <a href="join.html">Join our team</a>
+        <a class="btn btn-lg menu-book" href="https://nicolasbarbershop.nearcut.com/" target="_blank" rel="noopener">Book</a>
+      </nav>
+      <div class="site-menu-foot">
+        <div class="site-menu-social">
+          <a class="social-icon" href="https://www.instagram.com/nicolas_barbershop_/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6zm9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg></a>
+          <a class="social-icon" href="https://www.facebook.com/nicolasbarbershop35/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14C17.17 2.09 15.92 2 14.89 2 12.3 2 10.5 3.66 10.5 6.7V9.5H8v4h2.5V22h3.5v-8.5z"/></svg></a>
+        </div>
+        <a class="site-menu-review" href="https://search.google.com/local/writereview?placeid=ChIJI0imyHkeZUgKI9zRHF1nJQ" target="_blank" rel="noopener">Leave a Google review</a>
+      </div>
+    </div>
+  </div>
 
   <main>
     <div class="wrap hero">
@@ -103,7 +123,6 @@
       </div>
     </section>
 
-
     <section id="reviews">
       <div class="wrap">
         <p class="eyebrow">Reviews</p>
@@ -161,9 +180,12 @@
             </footer>
           </article>
         </div>
+        <div class="reviews-actions">
+          <a class="btn" href="https://search.google.com/local/writereview?placeid=ChIJI0imyHkeZUgKI9zRHF1nJQ" target="_blank" rel="noopener">Leave a Google review</a>
+          <a class="btn-ghost" href="https://www.google.com/maps/place/Nicola%27s+Barbershop/@53.2956323,-3.8349596,17z/data=!4m8!3m7!1s0x48651e79c8a64823:0x25675d1cd1dc230a!8m2!3d53.2956323!4d-3.8349596!9m1!1b1!16s%2Fg%2F11gbw9nytc" target="_blank" rel="noopener">See all on Google</a>
+        </div>
         <p class="reviews-meta">
-          Recent Google reviews · updated 26 Sep 2026 ·
-          <a href="https://www.google.com/maps/place/Nicola%27s+Barbershop/@53.2956323,-3.8349596,17z/data=!4m8!3m7!1s0x48651e79c8a64823:0x25675d1cd1dc230a!8m2!3d53.2956323!4d-3.8349596!9m1!1b1!16s%2Fg%2F11gbw9nytc" target="_blank" rel="noopener">See all on Google</a>
+          Recent Google reviews · updated 26 Sep 2026
         </p>
       </div>
     </section>
@@ -218,16 +240,20 @@
     <div class="wrap footer-row">
       <p>© 2026 Nicola’s Barbershop · Deganwy</p>
       <div class="social">
+        <a href="services.html">Services</a>
         <a href="prices.html">Prices</a>
+        <a href="gallery.html">Gallery</a>
         <a href="faq.html">FAQ</a>
         <a href="policy.html">Policy</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#chair-rental">Chair rental</a>
+        <a href="join.html">Join our team</a>
+        <a href="https://search.google.com/local/writereview?placeid=ChIJI0imyHkeZUgKI9zRHF1nJQ" target="_blank" rel="noopener">Leave a review</a>
         <a href="https://www.instagram.com/nicolas_barbershop_/" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.facebook.com/nicolasbarbershop35/" target="_blank" rel="noopener">Facebook</a>
         <a href="https://nicolasbarbershop.nearcut.com/" target="_blank" rel="noopener">Book</a>
       </div>
     </div>
   </footer>
+  <script src="site.js" defer></script>
+
 </body>
 </html>
