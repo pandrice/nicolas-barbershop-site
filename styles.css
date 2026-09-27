@@ -988,3 +988,11 @@ a.card.card-link:hover {
 .footer-hours { font-size: 0.8rem; }
 .footer-copy { font-size: 0.8rem; margin-top: 0.4rem; }
 .btn-call { font-size: 0.95rem; padding: 0.7rem 1.1rem; min-height: 44px; }
+
+/* ── Services: plain cards, no stock photos (item 2) ──────────── */
+.service-overview-plain .ov-card { border-top: 3px solid var(--accent); }
+.service-overview-plain .ov-card-title {
+  position: static; padding: 1.1rem 1.05rem 0; color: var(--text);
+  text-shadow: none; font-size: 1.15rem;
+}
+.service-overview-plain .ov-card-body { padding-top: 0.5rem; }
