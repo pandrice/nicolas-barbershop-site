@@ -5,7 +5,9 @@
   --text: #f7f8f8;
   --muted: #8b8f98;
   --accent: #5e6ad2;
-  --accent-hover: #6e79de;
+  --accent-hover: #525dc4; /* button hover: white text 5.6:1 */
+  --accent-text: #7c86e2; /* links/text on dark: 6.0:1 on #08090a, 5.7:1 on #111214 (was #5e6ad2 at 4.2:1) */
+  --accent-text-hover: #9aa2ec;
   --max: 1080px;
   --font: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -87,7 +89,7 @@ header {
 .card-icon {
   width: 2rem; height: 2rem; border-radius: 8px;
   border: 1px solid rgba(94, 106, 210, 0.45);
-  display: grid; place-items: center; color: var(--accent);
+  display: grid; place-items: center; color: var(--accent-text);
   margin-bottom: 0.75rem; font-size: 0.9rem;
 }
 .card h3 { font-size: 0.95rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 0.35rem; }
@@ -209,14 +211,14 @@ footer {
 .review-card cite { font-style: normal; font-weight: 500; color: var(--text); }
 .review-card time { color: var(--muted); }
 .review-more {
-  color: var(--accent); font-weight: 500;
+  color: var(--accent-text); font-weight: 500;
   text-decoration: underline; text-underline-offset: 2px;
 }
-.review-more:hover { color: var(--accent-hover); }
+.review-more:hover { color: var(--accent-text-hover); }
 .reviews-meta {
   color: var(--muted); font-size: 0.85rem; margin-top: 0.5rem;
 }
-.reviews-meta a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.reviews-meta a { color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px; }
 @media (min-width: 720px) {
   .review-grid { grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
   .review-card { padding: 1rem; }
@@ -250,7 +252,7 @@ footer {
 .faq summary::after { content: "+"; float: right; color: var(--muted); }
 .faq details[open] summary::after { content: "–"; }
 .faq details p { color: var(--muted); margin-top: 0.65rem; font-size: 0.95rem; }
-.faq details a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+.faq details a { color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px; }
 
 /* Policy prose */
 .prose { max-width: 62ch; }
@@ -331,7 +333,7 @@ footer {
   color: var(--text);
   font-weight: 500;
 }
-.news-ticker-separator { color: var(--accent); padding: 0 0.2rem; }
+.news-ticker-separator { color: var(--accent-text); padding: 0 0.2rem; }
 .news-ticker-toggle {
   border: 0;
   border-left: 1px solid var(--border);
@@ -452,7 +454,7 @@ body.menu-open { overflow: hidden; }
   transition: color 0.15s ease;
 }
 .site-menu-nav a:hover,
-.site-menu-nav a[aria-current="page"] { color: var(--accent); }
+.site-menu-nav a[aria-current="page"] { color: var(--accent-text); }
 .site-menu-nav .menu-book {
   margin-top: 1rem; width: fit-content;
   font-size: 1rem; letter-spacing: -0.01em; line-height: 1.2;
@@ -473,7 +475,7 @@ body.menu-open { overflow: hidden; }
   border: 1px solid var(--border); background: var(--bg-elevated);
   color: var(--text); transition: background 0.15s ease, border-color 0.15s ease;
 }
-.social-icon:hover { background: #16181c; border-color: #2e3138; color: var(--accent); }
+.social-icon:hover { background: #16181c; border-color: #2e3138; color: var(--accent-text); }
 .social-icon svg { width: 1.25rem; height: 1.25rem; fill: currentColor; }
 .site-menu-review {
   font-size: 0.9rem; font-weight: 500; color: var(--muted);
@@ -823,8 +825,8 @@ a.card.card-link:hover {
   font-size: 0.8rem;
   color: var(--muted);
 }
-.ov-card-prices a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
-.ov-card-prices a:hover { color: var(--accent-hover); }
+.ov-card-prices a { color: var(--accent-text); text-decoration: underline; text-underline-offset: 2px; }
+.ov-card-prices a:hover { color: var(--accent-text-hover); }
 
 /* Soft hover reveal for duration/book — always visible on touch/no-hover */
 @media (hover: hover) and (pointer: fine) {
@@ -857,8 +859,8 @@ a.card.card-link:hover {
   font-size: 0.8rem;
   color: var(--muted);
 }
-.home-hours-cue .link-quiet { font-size: inherit; color: var(--accent); }
-.home-hours-cue .link-quiet:hover { color: var(--accent-hover); }
+.home-hours-cue .link-quiet { font-size: inherit; color: var(--accent-text); }
+.home-hours-cue .link-quiet:hover { color: var(--accent-text-hover); }
 
 .news-list {
   display: grid;
@@ -1009,3 +1011,37 @@ a.card.card-link:hover {
 .map-facade-note { color: var(--muted); font-size: 0.9rem; }
 .map-facade-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem; }
 .map-facade .btn, .map-facade .btn-ghost { min-height: 44px; }
+
+/* ── Accessibility (item 13) ──────────────────────────────────── */
+.skip-link {
+  position: absolute; left: 0.75rem; top: -4rem; z-index: 100;
+  background: var(--text); color: var(--bg); font-weight: 600;
+  padding: 0.75rem 1rem; border-radius: 8px; min-height: 44px;
+}
+.skip-link:focus { top: 0.75rem; outline: 2px solid var(--accent-text); outline-offset: 2px; }
+main:focus { outline: none; }
+.btn, .btn-ghost { min-height: 44px; }
+.menu-toggle { width: 2.75rem; height: 2.75rem; }
+.hero-actions .link-quiet, .cards-foot a { display: inline-flex; align-items: center; min-height: 44px; }
+.social { gap: 0 1rem; }
+.social a { display: inline-flex; align-items: center; min-height: 44px; }
+.ov-card-prices a { display: inline-flex; align-items: center; min-height: 44px; }
+.faq summary { padding: 0.65rem 0; margin: -0.65rem 0; }
+.site-menu-review { display: inline-flex; align-items: center; min-height: 44px; }
+.carousel-dot {
+  width: 1.5rem; height: 1.5rem; background: transparent; position: relative;
+}
+.carousel-dot::before {
+  content: ""; position: absolute; inset: 0; margin: auto;
+  width: 0.6rem; height: 0.6rem; border-radius: 999px; background: #5a5e68;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.carousel-dot[aria-selected="true"] { background: transparent; transform: none; }
+.carousel-dot[aria-selected="true"]::before { background: var(--accent-text); transform: scale(1.25); }
+.carousel-dots { gap: 0.15rem; }
+.carousel-btn { width: 2.75rem; height: 2.75rem; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+section .panel h2 {
+  font-size: 0.8rem; font-weight: 500; color: var(--muted);
+  letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 0.65rem;
+}
