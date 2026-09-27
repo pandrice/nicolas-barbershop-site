@@ -974,3 +974,17 @@ a.card.card-link:hover {
   .hero-media img { object-position: center; }
 }
 .hero .book-stack { flex-basis: 100%; }
+
+/* ── Footer NAP (item 5) ──────────────────────────────────────── */
+.footer-row { align-items: flex-start; }
+.footer-nap { display: grid; gap: 0.2rem; }
+.footer-nap address { font-style: normal; }
+.footer-name strong { color: var(--text); font-weight: 600; }
+.footer-tel {
+  display: inline-flex; align-items: center; min-height: 44px;
+  color: var(--text); font-weight: 600; font-size: 1rem;
+  text-decoration: underline; text-underline-offset: 3px;
+}
+.footer-hours { font-size: 0.8rem; }
+.footer-copy { font-size: 0.8rem; margin-top: 0.4rem; }
+.btn-call { font-size: 0.95rem; padding: 0.7rem 1.1rem; min-height: 44px; }
