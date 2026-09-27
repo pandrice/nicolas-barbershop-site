@@ -272,4 +272,19 @@
 
   document.querySelectorAll('[data-carousel]').forEach(initCarousel);
 
+  /* ── Visit map: load Google Maps iframe only when asked ─────── */
+  document.querySelectorAll('[data-map-src]').forEach(function (frame) {
+    var btn = frame.querySelector('[data-map-load]');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var iframe = document.createElement('iframe');
+      iframe.title = 'Map of Nicola’s Barbershop';
+      iframe.referrerPolicy = 'no-referrer-when-downgrade';
+      iframe.src = frame.getAttribute('data-map-src');
+      frame.innerHTML = '';
+      frame.appendChild(iframe);
+      iframe.focus();
+    });
+  });
+
 })();

@@ -190,9 +190,17 @@
               <div><span>Phone</span><br />07821 865044</div>
             </a>
           </div>
-          <div class="map-frame">
-            <iframe title="Map of Nicola’s Barbershop" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=35+Station+Road%2C+Deganwy%2C+Conwy+LL31+9DF&amp;output=embed"></iframe>
+          <div class="map-frame" data-map-src="https://www.google.com/maps?q=35+Station+Road%2C+Deganwy%2C+Conwy+LL31+9DF&amp;output=embed">
+            <!-- Map loads only on tap (saves ~2 MB of Google Maps on first load) -->
+            <div class="map-facade">
+              <p class="map-facade-title">35 Station Road, Deganwy LL31 9DF</p>
+              <p class="map-facade-note">On Station Road in Deganwy. Tap to load the Google map.</p>
+              <div class="map-facade-actions">
+                <button type="button" class="btn" data-map-load>Show map</button>
+                <a class="btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Nicola%27s+Barbershop%2C+35+Station+Road%2C+Deganwy+LL31+9DF" target="_blank" rel="noopener">Open in Google Maps</a>
+              </div>
+            </div>
+            <noscript><iframe title="Map of Nicola’s Barbershop" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=35+Station+Road%2C+Deganwy%2C+Conwy+LL31+9DF&amp;output=embed"></iframe></noscript>
           </div>
         </div>
         <p class="note">Maisie, our shop dog, is usually in. If you’re not a dog person, we’re not the best fit.</p>

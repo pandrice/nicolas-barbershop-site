@@ -996,3 +996,16 @@ a.card.card-link:hover {
   text-shadow: none; font-size: 1.15rem;
 }
 .service-overview-plain .ov-card-body { padding-top: 0.5rem; }
+
+/* ── Responsive images + map facade (item 10) ─────────────────── */
+.carousel-slide picture, .about-profile picture { display: block; }
+.carousel-slide picture { height: 100%; }
+.map-facade {
+  min-height: 280px; display: flex; flex-direction: column; justify-content: center;
+  gap: 0.5rem; padding: 1.5rem;
+  background: radial-gradient(circle at 70% 30%, rgba(94,106,210,0.12), transparent 60%), #0d0e10;
+}
+.map-facade-title { font-weight: 600; font-size: 1.05rem; }
+.map-facade-note { color: var(--muted); font-size: 0.9rem; }
+.map-facade-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem; }
+.map-facade .btn, .map-facade .btn-ghost { min-height: 44px; }
