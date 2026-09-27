@@ -33,7 +33,7 @@ header {
   display: flex; align-items: center; justify-content: space-between;
   gap: 1rem; min-height: 3.75rem;
 }
-.logo-link { display: flex; align-items: center; gap: 0.65rem; }
+.logo-link { display: flex; align-items: center; gap: 0.65rem; min-height: 44px; }
 .logo-img {
   height: 1.5rem; width: auto;
   /* Nearcut asset is white glyphs on black — keep black plate so white type stays visible */
