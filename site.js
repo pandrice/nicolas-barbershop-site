@@ -103,7 +103,6 @@
   var newsList = document.getElementById('news-list');
   var newsTicker = document.getElementById('news-ticker');
   if (newsList || newsTicker) {
-    var emptyMsg = 'No current notices — check back for holiday hours and shop updates.';
     var tickerTrack = newsTicker && newsTicker.querySelector('.news-ticker-track');
     var tickerList = newsTicker && newsTicker.querySelector('.news-ticker-list');
     var tickerToggle = newsTicker && newsTicker.querySelector('.news-ticker-toggle');
@@ -128,8 +127,11 @@
         .replace(/"/g, '&quot;');
     }
 
+    // No notices (or fetch failed): keep the whole Shop updates section hidden.
+    var newsSection = document.getElementById('news');
     function renderEmpty() {
-      if (newsList) newsList.innerHTML = '<p class="news-empty">' + emptyMsg + '</p>';
+      if (newsList) newsList.innerHTML = '';
+      if (newsSection) newsSection.hidden = true;
     }
 
     function renderItems(items) {
@@ -155,6 +157,7 @@
         );
       }).join('');
       newsList.innerHTML = html;
+      if (newsSection) newsSection.hidden = false;
     }
 
     function renderTicker(items) {
