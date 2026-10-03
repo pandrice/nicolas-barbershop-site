@@ -73,6 +73,16 @@ header {
   border-radius: 10px; font-weight: 500; font-size: 0.95rem; color: var(--text);
 }
 .call-pop-link:hover, .call-pop-link:focus-visible { background: #1a1c22; }
+/* Equal-width Book + Call pair */
+.btn-row.btn-pair {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem; width: 100%; max-width: 26rem; align-items: stretch;
+}
+.btn-pair > .btn, .btn-pair > .call-wrap { width: 100%; min-width: 0; }
+.btn-pair > .call-wrap { display: flex; }
+.btn-pair .call-wrap > .btn { width: 100%; }
+.btn-pair .btn { text-align: center; line-height: 1.2; padding-inline: 0.75rem; }
+
 .price-foot { margin-top: 1rem; color: var(--muted); font-size: 0.9rem; }
 .nav-links {
   display: none; gap: 1.1rem; color: var(--muted);
