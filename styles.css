@@ -57,31 +57,17 @@ header {
   .nav-actions { gap: 0.4rem; }
 }
 
-/* Button rows + Call menu */
+/* Button rows */
 .btn-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
-.call-wrap { position: relative; display: inline-flex; }
-.call-pop {
-  position: absolute; top: calc(100% + 0.4rem); left: 0; z-index: 30;
-  min-width: 11.5rem; padding: 0.35rem;
-  background: var(--bg-elevated); border: 1px solid var(--border);
-  border-radius: 14px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
-}
-.call-pop[hidden] { display: none; }
-.call-pop.is-right { left: auto; right: 0; }
-.call-pop-link {
-  display: flex; align-items: center; min-height: 44px; padding: 0 0.9rem;
-  border-radius: 10px; font-weight: 500; font-size: 0.95rem; color: var(--text);
-}
-.call-pop-link:hover, .call-pop-link:focus-visible { background: #1a1c22; }
 /* Equal-width Book + Call pair */
 .btn-row.btn-pair {
   display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.75rem; width: 100%; max-width: 26rem; align-items: stretch;
 }
-.btn-pair > .btn, .btn-pair > .call-wrap { width: 100%; min-width: 0; }
-.btn-pair > .call-wrap { display: flex; }
-.btn-pair .call-wrap > .btn { width: 100%; }
-.btn-pair .btn { text-align: center; line-height: 1.2; padding-inline: 0.75rem; }
+.btn-pair > .btn, .btn-pair > .btn-ghost { width: 100%; min-width: 0; }
+.btn-pair .btn, .btn-pair .btn-ghost { text-align: center; line-height: 1.2; padding-inline: 0.75rem; }
+/* Stacked variant: two equal full-width buttons (used where a label is too long for two columns) */
+.btn-row.btn-pair.btn-pair-stack { grid-template-columns: minmax(0, 1fr); max-width: 22rem; }
 
 .price-foot { margin-top: 1rem; color: var(--muted); font-size: 0.9rem; }
 .nav-links {
