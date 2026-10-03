@@ -1061,3 +1061,9 @@ section .panel h2 {
   font-size: 0.8rem; font-weight: 500; color: var(--muted);
   letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 0.65rem;
 }
+
+/* Services: cards with several options (Senior, Kids, Family) */
+.ov-options { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.ov-options li { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; padding: 0.4rem 0; border-top: 1px solid var(--border); }
+.ov-options li:first-child { border-top: 0; }
+.ov-options li span { color: var(--text); font-size: 0.9rem; }
