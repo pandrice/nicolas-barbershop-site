@@ -47,7 +47,7 @@
         <a href="faq.html">FAQ</a>
       </nav>
       <div class="nav-actions">
-        <a class="btn" href="https://nicolasbarbershop.nearcut.com/book" target="_blank" rel="noopener">Book</a>
+        <a class="btn" href="index.html">Home</a>
         <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
           <span class="menu-toggle-bars" aria-hidden="true"><span></span></span>
         </button>
@@ -77,7 +77,6 @@
         <a href="faq.html">FAQ</a>
         <a href="policy.html">Policy</a>
         <a href="join.html">Join our team</a>
-        <a class="btn btn-lg menu-book" href="https://nicolasbarbershop.nearcut.com/book" target="_blank" rel="noopener">Book</a>
       </nav>
       <div class="site-menu-foot">
         <div class="site-menu-social">
@@ -131,5 +130,37 @@
   </footer>
   <script src="site.js" defer></script>
 
+
+  <div id="leave-modal" class="leave-modal" hidden role="dialog" aria-modal="true" aria-labelledby="leave-title">
+    <div class="leave-box">
+      <h2 id="leave-title">Leave booking?</h2>
+      <p>If you leave this page, your booking so far will be discarded.</p>
+      <div class="leave-actions">
+        <button type="button" class="btn" id="leave-keep">Keep booking</button>
+        <a class="btn btn-ghost-dark" id="leave-go" href="index.html">Return home</a>
+      </div>
+    </div>
+  </div>
+  <script>
+  (function () {
+    var modal = document.getElementById('leave-modal');
+    var go = document.getElementById('leave-go');
+    var keep = document.getElementById('leave-keep');
+    function close() { modal.hidden = true; document.body.classList.remove('leave-open'); }
+    keep.addEventListener('click', close);
+    modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !modal.hidden) close(); });
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href]');
+      if (!a || a.id === 'leave-go' || a.target === '_blank') return;
+      var href = a.getAttribute('href');
+      if (!href || href.charAt(0) === '#' || /^(tel:|mailto:|https?:)/i.test(href)) return;
+      e.preventDefault();
+      go.setAttribute('href', href);
+      go.textContent = /^index\.html/.test(href) ? 'Return home' : 'Leave booking';
+      modal.hidden = false; document.body.classList.add('leave-open'); keep.focus();
+    });
+  })();
+  </script>
 </body>
 </html>

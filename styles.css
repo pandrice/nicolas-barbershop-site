@@ -1067,3 +1067,14 @@ section .panel h2 {
 .ov-options li { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; padding: 0.4rem 0; border-top: 1px solid var(--border); }
 .ov-options li:first-child { border-top: 0; }
 .ov-options li span { color: var(--text); font-size: 0.9rem; }
+
+/* Leave-booking warning (book page) */
+.leave-modal { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; padding: 1.25rem; background: rgba(0,0,0,0.72); }
+.leave-modal[hidden] { display: none; }
+.leave-box { width: 100%; max-width: 24rem; padding: 1.5rem; border: 1px solid var(--border); border-radius: 14px; background: var(--bg-elevated); text-align: center; }
+.leave-box h2 { margin: 0 0 0.5rem; font-size: 1.25rem; }
+.leave-box p { margin: 0 0 1.25rem; color: var(--muted); line-height: 1.5; }
+.leave-actions { display: flex; flex-direction: column; gap: 0.65rem; }
+.leave-actions .btn { width: 100%; justify-content: center; text-align: center; box-sizing: border-box; }
+.btn-ghost-dark { background: transparent !important; border: 1px solid var(--border-strong, #3a3d44) !important; color: var(--text) !important; }
+body.leave-open { overflow: hidden; }
