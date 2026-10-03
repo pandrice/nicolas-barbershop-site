@@ -44,6 +44,36 @@ header {
   font-weight: 600; font-size: 0.9rem; letter-spacing: -0.02em;
   display: none;
 }
+/* Header wordmark (text, so it stays sharp and can be sized to fit) */
+.logo-wordmark {
+  display: block; white-space: nowrap; text-transform: uppercase;
+  font-weight: 600; letter-spacing: 0.1em; line-height: 1;
+  font-size: clamp(0.8rem, 3.9vw, 0.95rem); color: var(--text);
+}
+@media (min-width: 720px) { .logo-wordmark { font-size: 1.1rem; letter-spacing: 0.14em; } }
+.logo-link { min-width: 0; flex-shrink: 1; }
+@media (max-width: 400px) {
+  .nav { gap: 0.5rem; }
+  .nav-actions { gap: 0.4rem; }
+}
+
+/* Button rows + Call menu */
+.btn-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem; }
+.call-wrap { position: relative; display: inline-flex; }
+.call-pop {
+  position: absolute; top: calc(100% + 0.4rem); left: 0; z-index: 30;
+  min-width: 11.5rem; padding: 0.35rem;
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  border-radius: 14px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+}
+.call-pop[hidden] { display: none; }
+.call-pop.is-right { left: auto; right: 0; }
+.call-pop-link {
+  display: flex; align-items: center; min-height: 44px; padding: 0 0.9rem;
+  border-radius: 10px; font-weight: 500; font-size: 0.95rem; color: var(--text);
+}
+.call-pop-link:hover, .call-pop-link:focus-visible { background: #1a1c22; }
+.price-foot { margin-top: 1rem; color: var(--muted); font-size: 0.9rem; }
 .nav-links {
   display: none; gap: 1.1rem; color: var(--muted);
   font-size: 0.85rem; font-weight: 500;
@@ -106,7 +136,8 @@ section h2, .page-hero h1 {
 }
 .page-hero h1 { font-size: clamp(2rem, 5vw, 2.75rem); }
 .section-lead, .page-lead { color: var(--muted); max-width: 48ch; margin-bottom: 1.75rem; }
-.visit-grid { display: grid; gap: 1.5rem; }
+.visit-grid { display: grid; gap: 1.5rem; grid-template-columns: minmax(0, 1fr); }
+.visit-grid > * { min-width: 0; }
 .panel {
   background: var(--bg-elevated); border: 1px solid var(--border);
   border-radius: 14px; padding: 1.25rem;
@@ -120,13 +151,18 @@ section h2, .page-hero h1 {
 .hours th, .hours td { text-align: left; padding: 0.45rem 0; border-bottom: 1px solid var(--border); font-weight: 400; }
 .hours tr:last-child th, .hours tr:last-child td { border-bottom: none; }
 .hours th { color: var(--muted); width: 35%; }
+.map-wrap { display: grid; gap: 0.75rem; align-content: start; }
 .map-frame {
   overflow: hidden; border-radius: 14px; border: 1px solid var(--border);
-  min-height: 240px; background: #0d0e10;
+  background: #0d0e10; aspect-ratio: 4 / 3; width: 100%; min-height: 260px;
 }
 .map-frame iframe {
-  width: 100%; height: 280px; border: 0;
+  display: block; width: 100%; height: 100%; border: 0;
   filter: grayscale(1) invert(0.92) contrast(0.9);
+}
+.map-open { justify-content: center; }
+@media (min-width: 720px) {
+  .map-frame { aspect-ratio: auto; height: 100%; min-height: 360px; }
 }
 
 .btn-directions {
@@ -272,7 +308,7 @@ footer {
   .logo-text { display: none; }
   .logo-img { height: 1.65rem; }
   .cards { grid-template-columns: repeat(3, 1fr); padding: 1rem; }
-  .visit-grid { grid-template-columns: 1fr 1.1fr; align-items: start; }
+  .visit-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); align-items: start; }
   .team { grid-template-columns: 1fr 1fr; }
   .hero { padding-top: 5rem; padding-bottom: 3rem; }
 }
@@ -982,14 +1018,7 @@ a.card.card-link:hover {
 .footer-nap { display: grid; gap: 0.2rem; }
 .footer-nap address { font-style: normal; }
 .footer-name strong { color: var(--text); font-weight: 600; }
-.footer-tel {
-  display: inline-flex; align-items: center; min-height: 44px;
-  color: var(--text); font-weight: 600; font-size: 1rem;
-  text-decoration: underline; text-underline-offset: 3px;
-}
-.footer-hours { font-size: 0.8rem; }
 .footer-copy { font-size: 0.8rem; margin-top: 0.4rem; }
-.btn-call { font-size: 0.95rem; padding: 0.7rem 1.1rem; min-height: 44px; }
 
 /* ── Services: plain cards, no stock photos (item 2) ──────────── */
 .service-overview-plain .ov-card { border-top: 3px solid var(--accent); }
@@ -1002,15 +1031,6 @@ a.card.card-link:hover {
 /* ── Responsive images + map facade (item 10) ─────────────────── */
 .carousel-slide picture, .about-profile picture { display: block; }
 .carousel-slide picture { height: 100%; }
-.map-facade {
-  min-height: 280px; display: flex; flex-direction: column; justify-content: center;
-  gap: 0.5rem; padding: 1.5rem;
-  background: radial-gradient(circle at 70% 30%, rgba(94,106,210,0.12), transparent 60%), #0d0e10;
-}
-.map-facade-title { font-weight: 600; font-size: 1.05rem; }
-.map-facade-note { color: var(--muted); font-size: 0.9rem; }
-.map-facade-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem; }
-.map-facade .btn, .map-facade .btn-ghost { min-height: 44px; }
 
 /* ── Accessibility (item 13) ──────────────────────────────────── */
 .skip-link {

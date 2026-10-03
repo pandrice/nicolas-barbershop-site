@@ -272,18 +272,99 @@
 
   document.querySelectorAll('[data-carousel]').forEach(initCarousel);
 
-  /* ── Visit map: load Google Maps iframe only when asked ─────── */
-  document.querySelectorAll('[data-map-src]').forEach(function (frame) {
-    var btn = frame.querySelector('[data-map-load]');
-    if (!btn) return;
-    btn.addEventListener('click', function () {
-      var iframe = document.createElement('iframe');
-      iframe.title = 'Map of Nicola’s Barbershop';
-      iframe.referrerPolicy = 'no-referrer-when-downgrade';
-      iframe.src = frame.getAttribute('data-map-src');
-      frame.innerHTML = '';
-      frame.appendChild(iframe);
-      iframe.focus();
+  /* ── Call button: small menu with Phone / WhatsApp ───────────
+     Markup on each page is just <a class="btn call-btn" href="tel:..." data-call-menu>Call</a>.
+     Without JS it stays a plain tel: link; with JS it opens this menu. */
+  var CALL_TEL = 'tel:+447821865044';
+  var CALL_WA = 'https://wa.me/447821865044';
+  var callMenus = [];
+
+  function closeCallMenus(except) {
+    callMenus.forEach(function (m) {
+      if (m === except || m.pop.hidden) return;
+      m.pop.hidden = true;
+      m.trigger.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  document.querySelectorAll('[data-call-menu]').forEach(function (trigger, n) {
+    var wrap = document.createElement('span');
+    wrap.className = 'call-wrap';
+    trigger.parentNode.insertBefore(wrap, trigger);
+    wrap.appendChild(trigger);
+
+    var pop = document.createElement('div');
+    pop.className = 'call-pop';
+    pop.id = 'call-pop-' + n;
+    pop.hidden = true;
+    pop.setAttribute('role', 'group');
+    pop.setAttribute('aria-label', 'Contact options');
+    pop.innerHTML =
+      '<a class="call-pop-link" href="' + CALL_TEL + '">Call</a>' +
+      '<a class="call-pop-link" href="' + CALL_WA + '" target="_blank" rel="noopener">WhatsApp</a>';
+    wrap.appendChild(pop);
+
+    trigger.setAttribute('role', 'button');
+    trigger.setAttribute('aria-haspopup', 'true');
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.setAttribute('aria-controls', pop.id);
+
+    var menu = { trigger: trigger, pop: pop, wrap: wrap };
+    callMenus.push(menu);
+
+    function open() {
+      closeCallMenus(menu);
+      pop.hidden = false;
+      pop.classList.remove('is-right');
+      var r = pop.getBoundingClientRect();
+      if (r.right > document.documentElement.clientWidth - 8) pop.classList.add('is-right');
+      trigger.setAttribute('aria-expanded', 'true');
+    }
+    function close() {
+      pop.hidden = true;
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+
+    trigger.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (pop.hidden) open(); else close();
+    });
+    trigger.addEventListener('keydown', function (e) {
+      if (e.key === ' ') { e.preventDefault(); trigger.click(); }
+    });
+    wrap.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !pop.hidden) {
+        e.preventDefault();
+        e.stopPropagation();
+        close();
+        trigger.focus();
+      }
+    });
+    wrap.addEventListener('focusout', function (e) {
+      if (!pop.hidden && e.relatedTarget && !wrap.contains(e.relatedTarget)) close();
+    });
+    pop.addEventListener('click', function () {
+      // Let the link do its thing, then tidy up
+      setTimeout(close, 0);
+    });
+  });
+
+  document.addEventListener('click', function (e) {
+    callMenus.forEach(function (m) {
+      if (!m.pop.hidden && !m.wrap.contains(e.target)) {
+        m.pop.hidden = true;
+        m.trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    callMenus.forEach(function (m) {
+      if (!m.pop.hidden) {
+        m.pop.hidden = true;
+        m.trigger.setAttribute('aria-expanded', 'false');
+        m.trigger.focus();
+      }
     });
   });
 

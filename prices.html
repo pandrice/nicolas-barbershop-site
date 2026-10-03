@@ -37,7 +37,7 @@
     <header>
     <div class="wrap nav">
       <a class="logo-link" href="index.html">
-        <img class="logo-img" src="assets/logo.svg" width="220" height="28" alt="Nicola’s Barbershop" />
+        <span class="logo-wordmark">Nicola’s Barbershop</span>
       </a>
       <nav class="nav-links" aria-label="Main">
         <a href="services.html">Services</a>
@@ -94,10 +94,9 @@
     <div class="wrap page-hero">
       <p class="eyebrow">Menu</p>
       <h1>Price list</h1>
-      <p class="page-lead">Taken from the live Nearcut booking menu (Sep 2026). Book a time that suits you with Nicola or Leanne.</p>
-      <div class="book-stack">
+      <div class="btn-row">
         <a class="btn" href="https://nicolasbarbershop.nearcut.com/book" target="_blank" rel="noopener">Book a time online</a>
-        <p class="book-hint">Pick a service, then Nicola or Leanne. Nearcut will ask you to log in or sign up to see times. Rather ring? <a class="book-hint-tel" href="tel:+447821865044">07821 865044</a>.</p>
+        <a class="btn call-btn" href="tel:+447821865044" data-call-menu>Call</a>
       </div>
     </div>
 
@@ -234,7 +233,10 @@
           <div class="price-amount">£50</div>
         </div>
         </div>
-        <p class="note">Prices can change on Nearcut — the booking screen is always the source of truth when you book. Need to cancel? See our <a class="link-quiet" href="policy.html" style="color:var(--accent-text)">policy</a>.</p>
+        <div class="btn-row" style="margin-top:0.5rem;">
+          <a class="btn" href="https://nicolasbarbershop.nearcut.com/book" target="_blank" rel="noopener">Book a time online</a>
+        </div>
+        <p class="price-foot">Need to cancel? See our <a class="link-quiet" href="policy.html" style="color:var(--accent-text)">policy</a>.</p>
       </div>
     </section>
   </main>
@@ -242,10 +244,6 @@
     <footer>
     <div class="wrap footer-row">
       <div class="footer-nap">
-        <p class="footer-name"><strong>Nicola’s Barbershop</strong></p>
-        <address>35 Station Road, Deganwy, Conwy LL31 9DF</address>
-        <p><a class="footer-tel" href="tel:+447821865044">07821 865044</a></p>
-        <p class="footer-hours">Mon 9–5 · Tue 10–7 · Wed 9–5 · Thu–Fri 9–6:30 · Sat–Sun closed</p>
         <p class="footer-copy">© 2026 Nicola’s Barbershop</p>
       </div>
       <div class="social">

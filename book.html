@@ -36,7 +36,7 @@
     <header>
     <div class="wrap nav">
       <a class="logo-link" href="index.html">
-        <img class="logo-img" src="assets/logo.svg" width="220" height="28" alt="Nicola’s Barbershop" />
+        <span class="logo-wordmark">Nicola’s Barbershop</span>
       </a>
       <nav class="nav-links" aria-label="Main">
         <a href="services.html">Services</a>
@@ -93,8 +93,11 @@
     <div class="wrap page-hero" style="padding-bottom:1rem;">
       <p class="eyebrow">Book online</p>
       <h1>Book your appointment</h1>
-      <p class="page-lead" style="margin-bottom:0.75rem;">Pick a service, then Nicola or Leanne, and choose a time that suits you. Prefer to ring? <a class="book-hint-tel" href="tel:+447821865044">07821 865044</a></p>
-      <p class="book-hint" style="margin:0;">Trouble loading? <a class="book-hint-tel" href="https://nicolasbarbershop.nearcut.com/book" target="_blank" rel="noopener">Book on Nearcut</a></p>
+      <p class="page-lead" style="margin-bottom:0.75rem;">Pick a service, then Nicola or Leanne, and choose a time that suits you.</p>
+      <div class="btn-row">
+        <a class="btn call-btn" href="tel:+447821865044" data-call-menu>Call</a>
+        <a class="btn-ghost" href="https://nicolasbarbershop.nearcut.com/book" target="_blank" rel="noopener">Trouble loading? Book on Nearcut</a>
+      </div>
     </div>
 
     <!-- Full-bleed wrapper: deliberately NOT inside .wrap, no padding/margin, so the Nearcut widget runs edge to edge on phones.
@@ -102,17 +105,13 @@
     <div class="nearcut-bleed" style="width:100%;max-width:none;margin:0;padding:0;background:#f4f4f5;min-height:640px;">
       <!-- TODO: confirm data-domain/nonce from Nearcut Settings > Integrations (Website integration). "iframe-x" is the placeholder from Nearcut's docs; the real value for this shop is unconfirmed. If Nearcut's code includes a nonce attribute on the script tag, add it. -->
       <script src="https://nearcut.com/secure_widget.js"></script><div id="nearcut" data-domain="https://iframe-x.nearcut.com"></div>
-      <noscript><p style="padding:1.5rem;color:#111;text-align:center;">Please enable JavaScript to book here, or <a href="https://nicolasbarbershop.nearcut.com/book" style="color:#111;text-decoration:underline;">book on Nearcut</a> or call 07821 865044.</p></noscript>
+      <noscript><p style="padding:1.5rem;color:#111;text-align:center;">Please enable JavaScript to book here, or <a href="https://nicolasbarbershop.nearcut.com/book" style="color:#111;text-decoration:underline;">book on Nearcut</a>.</p></noscript>
     </div>
   </main>
 
     <footer>
     <div class="wrap footer-row">
       <div class="footer-nap">
-        <p class="footer-name"><strong>Nicola’s Barbershop</strong></p>
-        <address>35 Station Road, Deganwy, Conwy LL31 9DF</address>
-        <p><a class="footer-tel" href="tel:+447821865044">07821 865044</a></p>
-        <p class="footer-hours">Mon 9–5 · Tue 10–7 · Wed 9–5 · Thu–Fri 9–6:30 · Sat–Sun closed</p>
         <p class="footer-copy">© 2026 Nicola’s Barbershop</p>
       </div>
       <div class="social">
