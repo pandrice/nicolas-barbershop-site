@@ -1103,3 +1103,22 @@ body.leave-open { overflow: hidden; }
 .install-foot { color: var(--muted); font-size: 0.9rem; margin: 0.5rem 0; }
 .install-done { color: var(--accent-text); font-weight: 500; }
 .is-standalone .app-only-browser { display: none !important; }
+
+[hidden] { display: none !important; }
+.ios-sheet {
+  position: fixed; inset: 0; z-index: 1000; background: rgba(0,0,0,0.7);
+  display: flex; align-items: flex-end; justify-content: center; padding: 1rem 1rem 4.5rem;
+}
+.ios-sheet-box {
+  background: var(--bg-elevated); border: 1px solid var(--border);
+  border-radius: 16px; padding: 1.25rem; width: 100%; max-width: 420px;
+}
+.ios-sheet-box h2 { margin: 0 0 0.5rem; font-size: 1.15rem; }
+.ios-sheet-box ol { padding-left: 1.2rem; margin: 0 0 1rem; display: grid; gap: 0.5rem; }
+.ios-sheet-box .btn { width: 100%; }
+.ios-arrow {
+  position: fixed; bottom: 0.6rem; left: 50%; transform: translateX(-50%);
+  font-size: 2.2rem; color: var(--accent-text); animation: iosbob 1.2s ease-in-out infinite;
+}
+@keyframes iosbob { 50% { transform: translate(-50%, 8px); } }
+@media (prefers-reduced-motion: reduce) { .ios-arrow { animation: none; } }

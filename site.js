@@ -281,25 +281,33 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-/* ── Get the app: hide promos once installed, one-tap install on Android ── */
+/* ── Get the app: hide promos once installed, one-tap install on Android, steps on iPhone ── */
 (function () {
   var standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
-  if (standalone) {
-    document.documentElement.classList.add('is-standalone');
-    var done = document.getElementById('install-done');
-    if (done) done.hidden = false;
-  }
   var ua = navigator.userAgent || '';
+  var inApp = /FBAN|FBAV|FB_IAB|Instagram|Messenger/i.test(ua);
+  if (standalone || inApp) document.documentElement.classList.add('is-standalone');
+  var done = document.getElementById('install-done');
+  if (standalone && done) done.hidden = false;
+  var note = document.getElementById('inapp-note');
+  if (inApp && !standalone && note) note.hidden = false;
   var ios = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   var android = /Android/i.test(ua);
-  var ios_card = document.getElementById('steps-ios');
-  var and_card = document.getElementById('steps-android');
-  if (ios_card && and_card) {
-    if (ios) { and_card.hidden = true; }
-    else if (android) { ios_card.hidden = true; }
+  var iosCard = document.getElementById('steps-ios');
+  var andCard = document.getElementById('steps-android');
+  if (iosCard && andCard) {
+    if (ios) andCard.hidden = true;
+    else if (android) iosCard.hidden = true;
+  }
+  var btn = document.getElementById('install-btn');
+  var iosBtn = document.getElementById('ios-btn');
+  var sheet = document.getElementById('ios-sheet');
+  if (iosBtn && ios && !standalone && !inApp) {
+    iosBtn.hidden = false;
+    iosBtn.addEventListener('click', function () { sheet.hidden = false; });
+    document.getElementById('ios-close').addEventListener('click', function () { sheet.hidden = true; });
   }
   var deferred = null;
-  var btn = document.getElementById('install-btn');
   window.addEventListener('beforeinstallprompt', function (e) {
     e.preventDefault(); deferred = e;
     if (btn && !standalone) btn.hidden = false;
@@ -311,7 +319,6 @@ if ('serviceWorker' in navigator) {
   });
   window.addEventListener('appinstalled', function () {
     if (btn) btn.hidden = true;
-    var done = document.getElementById('install-done');
     if (done) done.hidden = false;
   });
 })();

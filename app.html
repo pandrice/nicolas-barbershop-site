@@ -99,16 +99,15 @@
       <p class="eyebrow">The app</p>
       <h1>Get the Nicola’s app</h1>
       <p class="page-lead">Put the shop on your phone’s home screen. Book, call and find us in one tap. It’s free, takes about ten seconds and there’s nothing to download from an app store.</p>
-      <p><button type="button" class="btn btn-lg" id="install-btn" hidden>Install the app</button></p>
+      <p><button type="button" class="btn btn-lg" id="install-btn" hidden>Install the app</button><button type="button" class="btn btn-lg" id="ios-btn" hidden>Add to Home Screen</button></p>
+      <p class="install-note" id="inapp-note" hidden>You’re in Facebook or Instagram’s built-in browser, which can’t install apps. Tap the three dots or the share icon and choose “Open in browser”, then come back to this page.</p>
       <p class="install-done" id="install-done" hidden>You’ve already got the app. Nice one.</p>
     </div>
     <section style="border-top:none;padding-top:0;">
       <div class="wrap install-steps">
         <div class="install-card" id="steps-ios">
-          <h2>iPhone or iPad</h2>
-          <p class="install-note">You need to use Safari for this (it won’t work from inside Instagram or Facebook’s browser).</p>
+          <h2>iPhone</h2>
           <ol>
-            <li>Open <strong>nicolasbarbershop.co.uk</strong> in Safari.</li>
             <li>Tap the <strong>Share</strong> button (the square with an arrow pointing up) at the bottom of the screen.</li>
             <li>Scroll down and tap <strong>Add to Home Screen</strong>.</li>
             <li>Tap <strong>Add</strong> in the top right corner.</li>
@@ -116,9 +115,7 @@
         </div>
         <div class="install-card" id="steps-android">
           <h2>Android</h2>
-          <p class="install-note">Use Chrome (Samsung Internet works too).</p>
           <ol>
-            <li>Open <strong>nicolasbarbershop.co.uk</strong> in Chrome.</li>
             <li>Tap the <strong>three dots</strong> menu in the top right corner.</li>
             <li>Tap <strong>Install app</strong> (or <strong>Add to Home screen</strong>).</li>
             <li>Tap <strong>Install</strong> to confirm.</li>
@@ -129,7 +126,21 @@
       </div>
     </section>
   </main>
-    <footer>
+  
+  <div class="ios-sheet" id="ios-sheet" hidden role="dialog" aria-modal="true" aria-label="Add to Home Screen">
+    <div class="ios-sheet-box">
+      <h2>Add to Home Screen</h2>
+      <ol>
+        <li>Tap the <strong>Share</strong> button at the bottom of Safari (the square with an arrow pointing up).</li>
+        <li>Scroll down and tap <strong>Add to Home Screen</strong>.</li>
+        <li>Tap <strong>Add</strong>.</li>
+      </ol>
+      <button type="button" class="btn" id="ios-close">Got it</button>
+    </div>
+    <div class="ios-arrow" aria-hidden="true">&#8595;</div>
+  </div>
+
+  <footer>
     <div class="wrap footer-row">
       <div class="footer-nap">
         <p class="footer-copy">© 2026 Nicola’s Barbershop</p>
