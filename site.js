@@ -280,3 +280,38 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js').catch(function () {});
   });
 }
+
+/* ── Get the app: hide promos once installed, one-tap install on Android ── */
+(function () {
+  var standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+  if (standalone) {
+    document.documentElement.classList.add('is-standalone');
+    var done = document.getElementById('install-done');
+    if (done) done.hidden = false;
+  }
+  var ua = navigator.userAgent || '';
+  var ios = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var android = /Android/i.test(ua);
+  var ios_card = document.getElementById('steps-ios');
+  var and_card = document.getElementById('steps-android');
+  if (ios_card && and_card) {
+    if (ios) { and_card.hidden = true; }
+    else if (android) { ios_card.hidden = true; }
+  }
+  var deferred = null;
+  var btn = document.getElementById('install-btn');
+  window.addEventListener('beforeinstallprompt', function (e) {
+    e.preventDefault(); deferred = e;
+    if (btn && !standalone) btn.hidden = false;
+  });
+  if (btn) btn.addEventListener('click', function () {
+    if (!deferred) return;
+    deferred.prompt();
+    deferred.userChoice.then(function () { deferred = null; btn.hidden = true; });
+  });
+  window.addEventListener('appinstalled', function () {
+    if (btn) btn.hidden = true;
+    var done = document.getElementById('install-done');
+    if (done) done.hidden = false;
+  });
+})();
