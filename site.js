@@ -273,3 +273,10 @@
   document.querySelectorAll('[data-carousel]').forEach(initCarousel);
 
 })();
+
+/* ── Service worker (app install + offline page) ────────────── */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('/sw.js').catch(function () {});
+  });
+}
