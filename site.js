@@ -310,7 +310,7 @@ if ('serviceWorker' in navigator) {
   var deferred = null;
   window.addEventListener('beforeinstallprompt', function (e) {
     e.preventDefault(); deferred = e;
-    if (btn && !standalone) btn.hidden = false;
+    if (btn && !standalone && !ios && !inApp) btn.hidden = false;
   });
   if (btn) btn.addEventListener('click', function () {
     if (!deferred) return;
