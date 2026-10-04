@@ -2,8 +2,8 @@
    Deliberately simple: pages always come from the network when online,
    so edits show straight away. The cache is only used if the phone is offline.
    Booking (book.html, Nearcut and any other site) is never cached. */
-const CACHE = 'nicolas-shell-v1';
-const SHELL = ['/offline.html', '/styles.css', '/site.js', '/assets/icon-192.png', '/assets/logo.svg'];
+const CACHE = 'nicolas-shell-v2';
+const SHELL = ['/offline', '/styles.css', '/site.js', '/assets/icon-192.png', '/assets/logo.svg'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));
@@ -23,7 +23,7 @@ self.addEventListener('fetch', (e) => {
   if (req.method !== 'GET' || url.origin !== self.location.origin) return;
   if (/^\/book(\.html)?\/?$/.test(url.pathname)) {
     if (req.mode === 'navigate') {
-      e.respondWith(fetch(req).catch(() => caches.match('/offline.html')));
+      e.respondWith(fetch(req).catch(() => caches.match('/offline')));
     }
     return;
   }
@@ -34,7 +34,7 @@ self.addEventListener('fetch', (e) => {
           if (res.ok) { const copy = res.clone(); caches.open(CACHE).then((c) => c.put(req, copy)); }
           return res;
         })
-        .catch(() => caches.match(req).then((r) => r || caches.match('/offline.html')))
+        .catch(() => caches.match(req).then((r) => r || caches.match('/offline')))
     );
     return;
   }
