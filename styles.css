@@ -1128,3 +1128,13 @@ h1, h2, h3, .site-menu-nav a, .eyebrow { font-family: Outfit, var(--font); }
 .logo-lockup { display: block; height: auto; width: clamp(150px, 52vw, 230px); }
 @media (min-width: 720px) { .logo-lockup { width: 300px; } }
 .footer-logo { display: block; height: auto; width: 220px; max-width: 70%; margin-bottom: 0.6rem; }
+
+/* Brand pattern: half-drop scissors-ring O, tone on tone */
+body {
+  background-image: url(assets/mark-dim.svg), url(assets/mark-dim.svg);
+  background-size: 96px 96px, 96px 96px;
+  background-position: 0 0, 48px 48px;
+  background-repeat: space, space;
+}
+@media (min-width: 720px) { body { background-size: 120px 120px, 120px 120px; background-position: 0 0, 60px 60px; } }
+header, footer, .site-menu, .card, .install-card, .app-promo, .review-card { background-color: var(--bg); }
