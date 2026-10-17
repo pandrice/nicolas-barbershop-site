@@ -1,13 +1,13 @@
 :root {
-  --bg: #08090a;
-  --bg-elevated: #111214;
-  --border: #23252a;
-  --text: #f7f8f8;
+  --bg: #0b0b0c;
+  --bg-elevated: #141416;
+  --border: #2b2b2f;
+  --text: #eae3d4;
   --muted: #8b8f98;
-  --accent: #5e6ad2;
-  --accent-hover: #525dc4; /* button hover: white text 5.6:1 */
-  --accent-text: #7c86e2; /* links/text on dark: 6.0:1 on #08090a, 5.7:1 on #111214 (was #5e6ad2 at 4.2:1) */
-  --accent-text-hover: #9aa2ec;
+  --accent: #c9a96a;
+  --accent-hover: #b8985c; /* button hover: white text 5.6:1 */
+  --accent-text: #c9a96a; /* links/text on dark: 6.0:1 on #08090a, 5.7:1 on #111214 (was #5e6ad2 at 4.2:1) */
+  --accent-text-hover: #dcc38d;
   --max: 1080px;
   --font: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -77,7 +77,7 @@ header {
 .nav-links a:hover, .nav-links a[aria-current="page"] { color: var(--text); }
 .btn {
   display: inline-flex; align-items: center; justify-content: center;
-  background: var(--accent); color: #fff; font-weight: 500;
+  background: var(--accent); color: #0b0b0c; font-weight: 500;
   font-size: 0.875rem; padding: 0.55rem 0.95rem; border-radius: 999px;
   transition: background 0.15s ease;
 }
@@ -114,7 +114,7 @@ header {
 }
 .card-icon {
   width: 2rem; height: 2rem; border-radius: 8px;
-  border: 1px solid rgba(94, 106, 210, 0.45);
+  border: 1px solid rgba(201, 169, 106, 0.45);
   display: grid; place-items: center; color: var(--accent-text);
   margin-bottom: 0.75rem; font-size: 0.9rem;
 }
@@ -236,8 +236,8 @@ footer {
 }
 .review-avatar {
   display: inline-grid; place-items: center; width: 1.45rem; height: 1.45rem;
-  border-radius: 50%; background: rgba(94, 106, 210, 0.18);
-  border: 1px solid rgba(94, 106, 210, 0.45); color: #b9beff;
+  border-radius: 50%; background: rgba(201, 169, 106, 0.16);
+  border: 1px solid rgba(201, 169, 106, 0.45); color: #dcc38d;
   font-size: 0.58rem; font-weight: 600; letter-spacing: 0;
 }
 .review-card cite { font-style: normal; font-weight: 500; color: var(--text); }
@@ -1122,3 +1122,9 @@ body.leave-open { overflow: hidden; }
 }
 @keyframes iosbob { 50% { transform: translate(-50%, 8px); } }
 @media (prefers-reduced-motion: reduce) { .ios-arrow { animation: none; } }
+
+/* ── Brand v3: lockup logo + Outfit headings ───────────────── */
+h1, h2, h3, .site-menu-nav a, .eyebrow { font-family: Outfit, var(--font); }
+.logo-lockup { display: block; height: auto; width: clamp(150px, 52vw, 230px); }
+@media (min-width: 720px) { .logo-lockup { width: 300px; } }
+.footer-logo { display: block; height: auto; width: 220px; max-width: 70%; margin-bottom: 0.6rem; }
