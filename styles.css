@@ -1122,3 +1122,5 @@ body.leave-open { overflow: hidden; }
 }
 @keyframes iosbob { 50% { transform: translate(-50%, 8px); } }
 @media (prefers-reduced-motion: reduce) { .ios-arrow { animation: none; } }
+.logo-wordmark-img { display:block; height:auto; width:min(62vw,240px); }
+@media (min-width:720px){ .logo-wordmark-img { width:300px; } }
