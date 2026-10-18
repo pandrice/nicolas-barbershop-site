@@ -1,7 +1,7 @@
 {
   "name": "Nicola's Barbershop",
   "short_name": "Nicola's",
-  "description": "Nicola's Barbershop, 35 Station Road, Deganwy. Book a cut, find us and call the shop.",
+  "description": "Nicola's Barbershop, 2 Maes y Castell, Llanrhos, Conwy. Book a cut, find us and call the shop.",
   "id": "/",
   "start_url": "/?source=app",
   "scope": "/",
