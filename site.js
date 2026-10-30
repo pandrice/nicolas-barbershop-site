@@ -103,7 +103,6 @@
   var newsList = document.getElementById('news-list');
   var newsTicker = document.getElementById('news-ticker');
   if (newsList || newsTicker) {
-    var emptyMsg = 'No current notices — check back for holiday hours and shop updates.';
     var tickerTrack = newsTicker && newsTicker.querySelector('.news-ticker-track');
     var tickerList = newsTicker && newsTicker.querySelector('.news-ticker-list');
     var tickerToggle = newsTicker && newsTicker.querySelector('.news-ticker-toggle');
@@ -128,8 +127,11 @@
         .replace(/"/g, '&quot;');
     }
 
+    // No notices (or fetch failed): keep the whole Shop updates section hidden.
+    var newsSection = document.getElementById('news');
     function renderEmpty() {
-      if (newsList) newsList.innerHTML = '<p class="news-empty">' + emptyMsg + '</p>';
+      if (newsList) newsList.innerHTML = '';
+      if (newsSection) newsSection.hidden = true;
     }
 
     function renderItems(items) {
@@ -155,6 +157,7 @@
         );
       }).join('');
       newsList.innerHTML = html;
+      if (newsSection) newsSection.hidden = false;
     }
 
     function renderTicker(items) {
@@ -269,4 +272,53 @@
 
   document.querySelectorAll('[data-carousel]').forEach(initCarousel);
 
+})();
+
+/* ── Service worker (app install + offline page) ────────────── */
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('/sw.js').catch(function () {});
+  });
+}
+
+/* ── Get the app: hide promos once installed, one-tap install on Android, steps on iPhone ── */
+(function () {
+  var standalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+  var ua = navigator.userAgent || '';
+  var inApp = /FBAN|FBAV|FB_IAB|Instagram|Messenger/i.test(ua);
+  if (standalone || inApp) document.documentElement.classList.add('is-standalone');
+  var done = document.getElementById('install-done');
+  if (standalone && done) done.hidden = false;
+  var note = document.getElementById('inapp-note');
+  if (inApp && !standalone && note) note.hidden = false;
+  var ios = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var android = /Android/i.test(ua);
+  var iosCard = document.getElementById('steps-ios');
+  var andCard = document.getElementById('steps-android');
+  if (iosCard && andCard) {
+    if (ios) andCard.hidden = true;
+    else if (android) iosCard.hidden = true;
+  }
+  var btn = document.getElementById('install-btn');
+  var iosBtn = document.getElementById('ios-btn');
+  var sheet = document.getElementById('ios-sheet');
+  if (iosBtn && ios && !standalone && !inApp) {
+    iosBtn.hidden = false;
+    iosBtn.addEventListener('click', function () { sheet.hidden = false; });
+    document.getElementById('ios-close').addEventListener('click', function () { sheet.hidden = true; });
+  }
+  var deferred = null;
+  window.addEventListener('beforeinstallprompt', function (e) {
+    e.preventDefault(); deferred = e;
+    if (btn && !standalone && !ios && !inApp) btn.hidden = false;
+  });
+  if (btn) btn.addEventListener('click', function () {
+    if (!deferred) return;
+    deferred.prompt();
+    deferred.userChoice.then(function () { deferred = null; btn.hidden = true; });
+  });
+  window.addEventListener('appinstalled', function () {
+    if (btn) btn.hidden = true;
+    if (done) done.hidden = false;
+  });
 })();

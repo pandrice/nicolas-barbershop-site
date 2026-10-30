@@ -2,24 +2,57 @@
 <html lang="en-GB">
 <head>
   <meta charset="utf-8" />
-  <meta name="robots" content="noindex, nofollow" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Services · Nicola’s Barbershop</title>
-  <meta name="description" content="What we offer at Nicola’s Barbershop, Deganwy — cuts, kids, seniors and family. Prices on the Prices page; book online with Nicola or Leanne." />
-  <meta name="theme-color" content="#08090a" />
+  <title>Haircuts, Skin Fades &amp; Beard Trims · Nicola’s Barbershop, Llanrhos, Conwy</title>
+  <meta name="description" content="Gents cuts, restyles, clipper cuts, skin fades and beard trims, plus children’s, senior and family cuts at Nicola’s Barbershop, Llanrhos, Conwy." />
+  <link rel="canonical" href="https://nicolasbarbershop.co.uk/services.html" />
+  <meta name="theme-color" content="#0b0b0c" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Nicola's" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <!-- Social share (Open Graph / Twitter). Absolute site URLs use https://nicolasbarbershop.co.uk/ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Nicola’s Barbershop" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:title" content="Haircuts, Skin Fades &amp; Beard Trims · Nicola’s Barbershop, Llanrhos, Conwy" />
+  <meta property="og:description" content="Gents cuts, restyles, clipper cuts, skin fades and beard trims, plus children’s, senior and family cuts at Nicola’s Barbershop, Llanrhos, Conwy." />
+  <meta property="og:url" content="https://nicolasbarbershop.co.uk/services.html" />
+  <meta property="og:image" content="https://nicolasbarbershop.co.uk/assets/og-share.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Nicola’s Barbershop, 2 Maes y Castell, Llanrhos, Conwy: barber chair inside the shop" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Haircuts, Skin Fades &amp; Beard Trims · Nicola’s Barbershop, Llanrhos, Conwy" />
+  <meta name="twitter:description" content="Gents cuts, restyles, clipper cuts, skin fades and beard trims, plus children’s, senior and family cuts at Nicola’s Barbershop, Llanrhos, Conwy." />
+  <meta name="twitter:image" content="https://nicolasbarbershop.co.uk/assets/og-share.jpg" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header>
     <div class="wrap nav">
       <a class="logo-link" href="index.html">
-        <img class="logo-img" src="assets/logo.svg" width="220" height="28" alt="Nicola’s Barbershop" />
+        <img class="logo-wordmark-img" src="assets/wordmark.svg" alt="Nicola’s Barbershop" width="240" height="17">
       </a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="services.html" aria-current="page">Services</a>
+        <a href="prices.html">Prices</a>
+        <a href="visit.html">Visit</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
       <div class="nav-actions">
-        <a class="btn" href="https://nicolasbarbershop.nearcut.com/book" target="_blank" rel="noopener">Book</a>
+        <a class="btn" href="book.html">Book</a>
         <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu">
           <span class="menu-toggle-bars" aria-hidden="true"><span></span></span>
         </button>
@@ -49,7 +82,8 @@
         <a href="faq.html">FAQ</a>
         <a href="policy.html">Policy</a>
         <a href="join.html">Join our team</a>
-        <a class="btn btn-lg menu-book" href="https://nicolasbarbershop.nearcut.com/book" target="_blank" rel="noopener">Book</a>
+        <a class="btn btn-lg menu-book" href="book.html">Book</a>
+        <a class="menu-app app-only-browser" href="app.html">Get the app</a>
       </nav>
       <div class="site-menu-foot">
         <div class="site-menu-social">
@@ -61,168 +95,149 @@
     </div>
   </div>
 
-  <main>
+  <main id="main" tabindex="-1">
     <div class="wrap page-hero">
       <p class="eyebrow">What we do</p>
-      <h1>Services</h1>
-      <p class="page-lead">A plain-English overview of each cut. Full prices and every combo are on <a class="link-quiet" href="prices.html" style="color:var(--accent)">Prices</a> — or pick a service when you book.</p>
-      <div class="book-stack">
-        <a class="btn" href="https://nicolasbarbershop.nearcut.com/book" target="_blank" rel="noopener">Book a time online</a>
-        <p class="book-hint">Pick a service, then Nicola or Leanne — Nearcut account needed for times</p>
+      <h1>Cuts and beard work in Llanrhos, Conwy</h1>
+      <p class="page-lead">Here is a list of the services we provide, with a short description of each. If you’re still unsure what to book, feel free to get in touch by phone or text.</p>
+      <div class="btn-row btn-pair">
+        <a class="btn" href="book.html">Book now</a>
+        <a class="btn call-btn" href="tel:+447821865044">Call</a>
       </div>
     </div>
-
     <section style="border-top:none;padding-top:0;">
       <div class="wrap">
-        <!-- Image credits: see assets/services/CREDITS.txt (Unsplash / Pexels) -->
-        <div class="service-overview-grid">
+        <div class="service-overview-grid service-overview-plain">
 
           <article class="ov-card reveal">
-            <div class="ov-card-media">
-              <img src="assets/services/standard.jpg" width="900" height="720" alt="White British-looking man looking away with a classic textured short back and sides cut, visible length on the sides, and a neat short beard" loading="lazy" />
-              <h2 class="ov-card-title">Standard gents cut</h2>
-            </div>
+            <h2 class="ov-card-title">Standard gents cut</h2>
             <div class="ov-card-body">
               <p>A regular tidy-up for everyday length — if growth is over about 10 weeks, book a Restyle instead.</p>
               <div class="ov-card-meta">
                 <span class="ov-duration">About 30 minutes</span>
-                <a class="btn" href="https://nicolasbarbershop.nearcut.com/book" target="_blank" rel="noopener">Book</a>
+                <a class="btn" href="book.html?nearcut_url=%2Fbook%2Fshops%2FFI3B08%2Fservices%3Fservice_options%5B%5D%3DHPAZW2">Book</a>
               </div>
               <p class="ov-card-prices"><a href="prices.html">See Prices</a></p>
             </div>
           </article>
 
           <article class="ov-card reveal">
-            <div class="ov-card-media">
-              <img src="assets/services/beard.jpg" width="900" height="720" alt="Close portrait of a white British-looking man with a neat short beard and textured short back and sides cut with visible length on the sides" loading="lazy" />
-              <h2 class="ov-card-title">Standard cut &amp; beard</h2>
-            </div>
+            <h2 class="ov-card-title">Standard cut &amp; beard</h2>
             <div class="ov-card-body">
               <p>Standard gents cut plus a beard trim or shape in the same visit.</p>
               <div class="ov-card-meta">
                 <span class="ov-duration">About 40 minutes</span>
-                <a class="btn" href="https://nicolasbarbershop.nearcut.com/book" target="_blank" rel="noopener">Book</a>
+                <a class="btn" href="book.html?nearcut_url=%2Fbook%2Fshops%2FFI3B08%2Fservices%3Fservice_options%5B%5D%3DD3HGXL">Book</a>
               </div>
               <p class="ov-card-prices"><a href="prices.html">See Prices</a></p>
             </div>
           </article>
 
           <article class="ov-card reveal">
-            <div class="ov-card-media">
-              <img src="assets/services/restyle.jpg" width="900" height="720" alt="Side profile of a white British-looking man with longer layered hair past the ears" loading="lazy" />
-              <h2 class="ov-card-title">Restyle</h2>
-            </div>
+            <h2 class="ov-card-title">Restyle</h2>
             <div class="ov-card-body">
               <p>Shape brought back, or a full style change, when the hair has grown out beyond a tidy-up.</p>
               <div class="ov-card-meta">
                 <span class="ov-duration">About 40 minutes</span>
-                <a class="btn" href="https://nicolasbarbershop.nearcut.com/book" target="_blank" rel="noopener">Book</a>
+                <a class="btn" href="book.html?nearcut_url=%2Fbook%2Fshops%2FFI3B08%2Fservices%3Fservice_options%5B%5D%3D1KS8WZ">Book</a>
               </div>
               <p class="ov-card-prices"><a href="prices.html">See Prices</a></p>
             </div>
           </article>
 
           <article class="ov-card reveal">
-            <div class="ov-card-media">
-              <img src="assets/services/clipper.jpg" width="900" height="720" alt="Portrait of a white British-looking man with a short even clipper cut" loading="lazy" />
-              <h2 class="ov-card-title">Clipper cut</h2>
-            </div>
+            <h2 class="ov-card-title">Clipper cut</h2>
             <div class="ov-card-body">
               <p>Graded clipper cut all over — a quick, even cut with little or no scissor work on top.</p>
               <div class="ov-card-meta">
                 <span class="ov-duration">About 20 minutes</span>
-                <a class="btn" href="https://nicolasbarbershop.nearcut.com/book" target="_blank" rel="noopener">Book</a>
+                <a class="btn" href="book.html?nearcut_url=%2Fbook%2Fshops%2FFI3B08%2Fservices%3Fservice_options%5B%5D%3DZI4TPN">Book</a>
               </div>
               <p class="ov-card-prices"><a href="prices.html">See Prices</a></p>
             </div>
           </article>
 
           <article class="ov-card reveal">
-            <div class="ov-card-media">
-              <img src="assets/services/clipper-beard.jpg" width="900" height="720" alt="Side profile of a man with a buzz cut and trimmed beard on a plain studio background" loading="lazy" />
-              <h2 class="ov-card-title">Clipper cut &amp; beard</h2>
-            </div>
+            <h2 class="ov-card-title">Clipper cut &amp; beard</h2>
             <div class="ov-card-body">
               <p>Clipper cut plus a beard trim or shape in the same visit.</p>
               <div class="ov-card-meta">
                 <span class="ov-duration">About 30 minutes</span>
-                <a class="btn" href="https://nicolasbarbershop.nearcut.com/book" target="_blank" rel="noopener">Book</a>
+                <a class="btn" href="book.html?nearcut_url=%2Fbook%2Fshops%2FFI3B08%2Fservices%3Fservice_options%5B%5D%3D5MVJ49">Book</a>
               </div>
               <p class="ov-card-prices"><a href="prices.html">See Prices</a></p>
             </div>
           </article>
 
           <article class="ov-card reveal">
-            <div class="ov-card-media">
-              <img src="assets/services/skin-fade.jpg" width="900" height="720" alt="Man with a clean skin fade and short beard in a plain portrait" loading="lazy" />
-              <h2 class="ov-card-title">Skin fade</h2>
-            </div>
+            <h2 class="ov-card-title">Skin fade</h2>
             <div class="ov-card-body">
               <p>Skin fade on the sides and back with a scissor finish on top.</p>
               <div class="ov-card-meta">
                 <span class="ov-duration">About 40 minutes</span>
-                <a class="btn" href="https://nicolasbarbershop.nearcut.com/book" target="_blank" rel="noopener">Book</a>
+                <a class="btn" href="book.html?nearcut_url=%2Fbook%2Fshops%2FFI3B08%2Fservices%3Fservice_options%5B%5D%3DBW34XU">Book</a>
               </div>
               <p class="ov-card-prices"><a href="prices.html">See Prices</a></p>
             </div>
           </article>
 
           <article class="ov-card reveal">
-            <div class="ov-card-media">
-              <img src="assets/services/skin-fade.jpg" width="900" height="720" alt="" role="presentation" loading="lazy" />
-              <h2 class="ov-card-title">Skin fade &amp; beard</h2>
-            </div>
+            <h2 class="ov-card-title">Skin fade &amp; beard</h2>
             <div class="ov-card-body">
               <p>Skin fade with a beard trim or shape in the same visit.</p>
               <div class="ov-card-meta">
                 <span class="ov-duration">About 45 minutes</span>
-                <a class="btn" href="https://nicolasbarbershop.nearcut.com/book" target="_blank" rel="noopener">Book</a>
+                <a class="btn" href="book.html?nearcut_url=%2Fbook%2Fshops%2FFI3B08%2Fservices%3Fservice_options%5B%5D%3D6J18RV">Book</a>
               </div>
               <p class="ov-card-prices"><a href="prices.html">See Prices</a></p>
             </div>
           </article>
 
           <article class="ov-card reveal">
-            <div class="ov-card-media">
-              <img src="assets/services/seniors.jpg" width="900" height="720" alt="Studio portrait of a man with a neat short haircut" loading="lazy" />
-              <h2 class="ov-card-title">Senior cuts (65+)</h2>
-            </div>
+            <h2 class="ov-card-title">Senior cuts (65+)</h2>
             <div class="ov-card-body">
               <p>Standard, restyle, clipper and beard options for customers aged 65 and over.</p>
               <div class="ov-card-meta">
                 <span class="ov-duration">About 15–30 minutes</span>
-                <a class="btn" href="https://nicolasbarbershop.nearcut.com/book" target="_blank" rel="noopener">Book</a>
               </div>
+              <ul class="ov-options">
+                  <li><span>Standard cut</span><a class="btn" href="book.html?nearcut_url=%2Fbook%2Fshops%2FFI3B08%2Fservices%3Fservice_options%5B%5D%3D86Y0ZH">Book</a></li>
+                  <li><span>Restyle</span><a class="btn" href="book.html?nearcut_url=%2Fbook%2Fshops%2FFI3B08%2Fservices%3Fservice_options%5B%5D%3DFUZ1ME">Book</a></li>
+                  <li><span>Clipper cut</span><a class="btn" href="book.html?nearcut_url=%2Fbook%2Fshops%2FFI3B08%2Fservices%3Fservice_options%5B%5D%3DIX46JE">Book</a></li>
+                  <li><span>Standard cut &amp; beard</span><a class="btn" href="book.html?nearcut_url=%2Fbook%2Fshops%2FFI3B08%2Fservices%3Fservice_options%5B%5D%3DVGSYL9">Book</a></li>
+              </ul>
               <p class="ov-card-prices"><a href="prices.html">See Prices</a></p>
             </div>
           </article>
 
           <article class="ov-card reveal">
-            <div class="ov-card-media">
-              <img src="assets/services/kids.jpg" width="900" height="720" alt="Young boy with a neat child haircut in a studio portrait" loading="lazy" />
-              <h2 class="ov-card-title">Kids (0–11)</h2>
-            </div>
+            <h2 class="ov-card-title">Kids (0–11)</h2>
             <div class="ov-card-body">
               <p>Child cuts and restyles for ages 0–11 — from 12 upwards book an adult cut.</p>
               <div class="ov-card-meta">
                 <span class="ov-duration">About 30 minutes</span>
-                <a class="btn" href="https://nicolasbarbershop.nearcut.com/book" target="_blank" rel="noopener">Book</a>
               </div>
+              <ul class="ov-options">
+                  <li><span>Child cut</span><a class="btn" href="book.html?nearcut_url=%2Fbook%2Fshops%2FFI3B08%2Fservices%3Fservice_options%5B%5D%3D8SFNIO">Book</a></li>
+                  <li><span>Child restyle</span><a class="btn" href="book.html?nearcut_url=%2Fbook%2Fshops%2FFI3B08%2Fservices%3Fservice_options%5B%5D%3DPSA9CT">Book</a></li>
+                  <li><span>2 child cuts</span><a class="btn" href="book.html?nearcut_url=%2Fbook%2Fshops%2FFI3B08%2Fservices%3Fservice_options%5B%5D%3D8BTMKC">Book</a></li>
+              </ul>
               <p class="ov-card-prices"><a href="prices.html">See Prices</a></p>
             </div>
           </article>
 
           <article class="ov-card reveal">
-            <div class="ov-card-media">
-              <img src="assets/services/family.jpg" width="900" height="720" alt="One adult and two children together in a studio profile portrait" loading="lazy" />
-              <h2 class="ov-card-title">Family</h2>
-            </div>
+            <h2 class="ov-card-title">Family</h2>
             <div class="ov-card-body">
               <p>Shared slots for two standard cuts, or one adult plus one or two children.</p>
               <div class="ov-card-meta">
                 <span class="ov-duration">About 50–80 minutes</span>
-                <a class="btn" href="https://nicolasbarbershop.nearcut.com/book" target="_blank" rel="noopener">Book</a>
               </div>
+              <ul class="ov-options">
+                  <li><span>2 standard cuts</span><a class="btn" href="book.html?nearcut_url=%2Fbook%2Fshops%2FFI3B08%2Fservices%3Fservice_options%5B%5D%3DY0VUOD">Book</a></li>
+                  <li><span>1 standard + 1 child</span><a class="btn" href="book.html?nearcut_url=%2Fbook%2Fshops%2FFI3B08%2Fservices%3Fservice_options%5B%5D%3DSGO8QH">Book</a></li>
+                  <li><span>1 standard + 2 children</span><a class="btn" href="book.html?nearcut_url=%2Fbook%2Fshops%2FFI3B08%2Fservices%3Fservice_options%5B%5D%3DBGN18Q">Book</a></li>
+              </ul>
               <p class="ov-card-prices"><a href="prices.html">See Prices</a></p>
             </div>
           </article>
@@ -230,21 +245,22 @@
         </div>
 
         <div class="cta-bar">
-          <p>Ready to book? Choose a service on Nearcut, then Nicola or Leanne. Need the full list with pounds? See <a class="link-quiet" href="prices.html" style="color:var(--accent)">Prices</a>.</p>
+          <p>Ready to book? Choose a service, then Nicola or Leanne. Need the full list with pounds? See <a class="link-quiet" href="prices.html" style="color:var(--accent-text)">Prices</a>.</p>
           <div class="book-stack">
-            <a class="btn" href="https://nicolasbarbershop.nearcut.com/book" target="_blank" rel="noopener">Book a time online</a>
-            <p class="book-hint">Nearcut account needed for times</p>
+            <a class="btn" href="book.html">Book now</a>
           </div>
         </div>
 
-        <p class="note">Prices can change on Nearcut — the booking screen is always the source of truth when you book. Need to cancel? See our <a class="link-quiet" href="policy.html" style="color:var(--accent)">policy</a>.</p>
+        <p class="note">Prices can change on Nearcut — the booking screen is always the source of truth when you book. Need to cancel? See our <a class="link-quiet" href="policy.html" style="color:var(--accent-text)">policy</a>.</p>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="wrap footer-row">
-      <p>© 2026 Nicola’s Barbershop · Deganwy</p>
+      <div class="footer-nap">
+        <p class="footer-copy">© 2026 Nicola’s Barbershop</p>
+      </div>
       <div class="social">
         <a href="services.html">Services</a>
         <a href="prices.html">Prices</a>
@@ -254,10 +270,11 @@
         <a href="faq.html">FAQ</a>
         <a href="policy.html">Policy</a>
         <a href="join.html">Join our team</a>
+        <a href="app.html" class="app-only-browser">Get the app</a>
         <a href="https://search.google.com/local/writereview?placeid=ChIJI0imyHkeZUgKI9zRHF1nJQ" target="_blank" rel="noopener">Leave a review</a>
         <a href="https://www.instagram.com/nicolas_barbershop_/" target="_blank" rel="noopener">Instagram</a>
         <a href="https://www.facebook.com/nicolasbarbershop35/" target="_blank" rel="noopener">Facebook</a>
-        <a href="https://nicolasbarbershop.nearcut.com/book" target="_blank" rel="noopener">Book</a>
+        <a href="book.html">Book</a>
       </div>
     </div>
   </footer>
