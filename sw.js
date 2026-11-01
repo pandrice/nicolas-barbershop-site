@@ -2,7 +2,7 @@
    Deliberately simple: pages always come from the network when online,
    so edits show straight away. The cache is only used if the phone is offline.
    Booking (book.html, Nearcut and any other site) is never cached. */
-const CACHE = 'nicolas-shell-v3';
+const CACHE = 'nicolas-shell-v4';
 const SHELL = ['/offline', '/styles.css', '/site.js', '/assets/icon-192.png', '/assets/logo.svg'];
 
 self.addEventListener('install', (e) => {
