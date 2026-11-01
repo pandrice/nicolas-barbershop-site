@@ -1199,5 +1199,5 @@ main h1,.hero-kicker,.hero-sub{animation:cup .8s cubic-bezier(.2,.8,.2,1) both}.
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .reveal-ready{opacity:1!important;transform:none!important}
-  .c-marq-track{white-space:normal}
+  .c-marq-track{white-space:nowrap}
 }
