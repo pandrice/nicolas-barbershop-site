@@ -322,3 +322,18 @@ if ('serviceWorker' in navigator) {
     if (done) done.hidden = false;
   });
 })();
+
+/* Concept C: clay accent on the last word of each page h1, live "Today" card */
+(function () {
+  var h = document.querySelector('main h1');
+  if (h && !h.querySelector('em')) {
+    var t = h.textContent.trim(), i = t.lastIndexOf(' ');
+    if (i > 0) { h.textContent = t.slice(0, i + 1); var em = document.createElement('em'); em.textContent = t.slice(i + 1); h.appendChild(em); }
+  }
+  var el = document.getElementById('c-today');
+  if (el) {
+    var H = ['Closed', '9:00–5:00', '10:00–7:00', '9:00–5:00', '9:00–6:30', '9:00–6:30', 'Closed'];
+    var d = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/London' })).getDay();
+    el.innerHTML = H[d] === 'Closed' ? '<b>Today</b>Closed' : '<b>Today</b>Open ' + H[d];
+  }
+})();
