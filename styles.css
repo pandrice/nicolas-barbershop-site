@@ -1201,3 +1201,4 @@ main h1,.hero-kicker,.hero-sub{animation:cup .8s cubic-bezier(.2,.8,.2,1) both}.
   .reveal-ready{opacity:1!important;transform:none!important}
   .c-marq-track{white-space:nowrap}
 }
+.site-menu-nav a.menu-book{font-size:1.1rem!important;font-weight:600!important;letter-spacing:0!important;line-height:1.2!important;padding:.8rem 1.6rem!important;min-height:44px;align-self:flex-start;display:inline-flex;align-items:center;margin-top:1.1rem}
